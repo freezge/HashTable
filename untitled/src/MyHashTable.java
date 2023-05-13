@@ -18,7 +18,10 @@ public class MyHashTable<K, V>{
     public MyHashTable(){
         this.chainArray = new HashNode[length];
     }
-    public MyHashTable(int length){}
+    public MyHashTable(int length){
+        this.length = length;
+        this.chainArray = new HashNode[length];
+    }
     private int hash(K key){
         return 0;
     }
