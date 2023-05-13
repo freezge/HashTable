@@ -13,10 +13,12 @@ public class MyHashTable<K, V>{
         }
     }
     private HashNode <K, V>[] chainArray;
-    private int M = 11;
+    private int length = 11;
     private int size;
-    public MyHashTable(){}
-    public MyHashTable(int M){}
+    public MyHashTable(){
+        this.chainArray = new HashNode[length];
+    }
+    public MyHashTable(int length){}
     private int hash(K key){
         return 0;
     }
