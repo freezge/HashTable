@@ -23,7 +23,10 @@ public class MyHashTable<K, V>{
         this.chainArray = new HashNode[len];
     }
     private int hash(K key){
-        int hashCode = 7;
+        if (key == null) {
+            return 0;
+        }
+        int hashCode = 1;
         char[] arr = key.toString().toCharArray();
         for (int i = 0; i < arr.length; i++) {
             char c = arr[i];
