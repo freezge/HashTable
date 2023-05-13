@@ -13,17 +13,23 @@ public class MyHashTable<K, V>{
         }
     }
     private HashNode <K, V>[] chainArray;
-    private int length = 11;
+    private int len = 11;
     private int size;
     public MyHashTable(){
-        this.chainArray = new HashNode[length];
+        this.chainArray = new HashNode[len];
     }
-    public MyHashTable(int length){
-        this.length = length;
-        this.chainArray = new HashNode[length];
+    public MyHashTable(int len){
+        this.len = len;
+        this.chainArray = new HashNode[len];
     }
     private int hash(K key){
-        return 0;
+        int hashCode = 7;
+        char[] arr = key.toString().toCharArray();
+        for (int i = 0; i < arr.length; i++) {
+            char c = arr[i];
+            hashCode = 13 * hashCode + c;
+        }
+        return hashCode;
     }
     public void put(K key, V value){}
     public V get(K key){
