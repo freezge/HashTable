@@ -87,10 +87,19 @@ public class MyHashTable<K, V>{
         }
         return null;
     }
-    public boolean contains(V Value){
+    public boolean contains(V value){
         return false;
     }
     public K getKey(V value){
+        for (int i = 0; i < len; i++){
+            HashNode<K, V> rootNode = chainArray[i];
+            while(rootNode != null){
+                if (rootNode.value.equals(value)){
+                    return rootNode.key;
+                }
+                rootNode = rootNode.next;
+            }
+        }
         return null;
     }
 }
