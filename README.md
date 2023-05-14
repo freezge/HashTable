@@ -2,11 +2,11 @@
 ### Assignment 4 | HashTable
 ### Task
 ```
-Create an additional class for testing K (example: MyHashTable<MyTestingClass, Student> table = new MyHashTable<>();)
+Create an additional class for testing K
 
-Create your own hashCode() method in MyTestingClass (You are not allowed to use default hashing methods like Objects.hash())
+Create your own hashCode() method in MyTestingClass
 
-Add random 10000 elements to your hashtable and print number of elements in each bucket (chain or linkedlist).
+Add random 10000 elements to your hashtable and print number of elements in each bucket.
 
 Tune your hashCode method in MyTestingClass so that it does not violate the uniform distribution.
 ```
