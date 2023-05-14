@@ -88,7 +88,7 @@ public class MyHashTable<K, V>{
         return null;
     }
     public boolean contains(V value){
-        return false;
+        return getKey(value) != null;
     }
     public K getKey(V value){
         for (int i = 0; i < len; i++){
