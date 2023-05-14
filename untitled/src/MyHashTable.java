@@ -105,4 +105,15 @@ public class MyHashTable<K, V>{
         }
         return null;
     }
+    public void testing(){
+        for (int i = 0; i < len; i++) {
+            HashNode<K, V> rootNode = chainArray[i];
+            int counter = 0;
+            while (rootNode != null) {
+                counter++;
+                rootNode = rootNode.next;
+            }
+            System.out.println(i + " : " + counter);
+        }
+    }
 }
