@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        MyHashTable<Integer, String> table = new MyHashTable<>();
+        table.put(1, "hello");
+        System.out.println(table.contains("helo"));
     }
 }

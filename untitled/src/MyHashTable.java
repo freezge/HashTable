@@ -72,6 +72,9 @@ public class MyHashTable<K, V>{
     public V remove(K key){
         int hash = hash(key);
         HashNode<K, V> rootNode = chainArray[hash];
+        if (rootNode == null){
+            return null;
+        }
         if(rootNode.key.equals(key)){
             chainArray[hash] = rootNode.next;
             size--;
