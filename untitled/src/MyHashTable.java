@@ -9,12 +9,12 @@ public class MyHashTable<K, V>{
         }
         @Override
         public String toString(){
-            return "{" + key + " : " + value + "}";
+            return "{" + key + ":" + value + "}";
         }
     }
     private HashNode <K, V>[] chainArray;
     private int len = 11;
-    private int size;
+    private int size = 0;
     public MyHashTable(){
         this.chainArray = new HashNode[len];
     }
@@ -32,9 +32,30 @@ public class MyHashTable<K, V>{
             char c = arr[i];
             hashCode = 13 * hashCode + c;
         }
+        hashCode = hashCode % len;
         return hashCode;
     }
-    public void put(K key, V value){}
+    public void put(K key, V value){
+        int hash = hash(key);
+        HashNode<K, V> hashNode = new HashNode<K, V>(key, value);
+        HashNode<K, V> rootNode = chainArray[hash];
+        if(rootNode == null){
+            chainArray[hash] = hashNode;
+            return;
+        }
+        while(rootNode.next != null){
+            if (rootNode.key.equals(key)){
+                rootNode.value = value;
+                return;
+            }
+            rootNode = rootNode.next;
+        }
+        if (rootNode.key.equals(key)){
+            rootNode.value = value;
+            return;
+        }
+        rootNode.next = hashNode;
+    }
     public V get(K key){
         return null;
     }
