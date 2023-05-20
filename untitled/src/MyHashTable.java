@@ -7,6 +7,9 @@ public class MyHashTable<K, V>{
             this.key = key;
             this.value = value;
         }
+
+        public HashNode() {}
+
         @Override
         public String toString(){
             return "{" + key + ":" + value + "}";
@@ -115,5 +118,16 @@ public class MyHashTable<K, V>{
             }
             System.out.println(i + " : " + counter);
         }
+    }
+    public MyHashTable clone_table(){
+        MyHashTable table = new MyHashTable<>(chainArray.length);
+        for(int i = 0; i < chainArray.length;i++){
+            HashNode<K, V> rootNode = chainArray[i];
+            while (rootNode!=null){
+            table.put(getKey(rootNode.value), get(rootNode.key));
+            rootNode = rootNode.next;
+            }
+        }
+        return table;
     }
 }

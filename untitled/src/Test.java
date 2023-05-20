@@ -38,4 +38,13 @@ public class Test {
         }
         table.testing();
     }
+    public void test5(){
+        table.put(1, "Hello");
+        table.put(2, "How are you?");
+        table.put(2, "Goodbye");
+        MyHashTable table2 = table.clone_table();
+        System.out.println(table2.getKey("Hello"));
+        System.out.println(table2.getKey("How are you?"));
+        System.out.println(table2.getKey("Goodbye"));
+    }
 }
